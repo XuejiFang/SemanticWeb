@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF[ <!ENTITY xsd "http://www.w3c.org/2000/10/XMLSchema#"> ]>
+
 <rdf:RDF
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-    xmlns:ex="http://example.org/"
-    xmlns:owl="http://www.w3c.org/2002/07/owl#"
-    xmlns:xsd="http://www.w3c.org/2000/10/XMLSchema#">
+    xmlns:owl="http://www.w3c.org/2002/07/owl#">
 
     <owl:Class rdf:about="Pizza">
         <rdfs:subClassOf>
@@ -13,7 +13,25 @@
                 <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">
                     2
                 </owl:minCardinality>
+                <owl:hasValue rdf:resource="tomato"/>
             </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:Class rdf:about="PizzaMargarita">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="hasTopping"/>
+                        <owl:hasValue rdf:resource="tomato"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="hasTopping"/>
+                        <owl:hasValue rdf:resource="cheese"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </rdfs:subClassOf>
     </owl:Class>
 

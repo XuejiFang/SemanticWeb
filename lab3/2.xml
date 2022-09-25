@@ -6,16 +6,19 @@
     xmlns:owl="http://www.w3c.org/2002/07/owl#"
     xmlns:xsd="http://www.w3c.org/2000/10/XMLSchema#">
 
-    <owl:Class rdf:about="Pizza">
+    <owl:Class rdf:about="Vegetable">
         <rdfs:subClassOf rdf:resource="PizzaTopping"/>
     </owl:Class>
     
     <owl:Class rdf:about="PizzaTopping">
         <owl:disjointWith rdf:resource="Pizza"/>
     </owl:Class>
-
-    <owl:Class rdf:about="Vegetable"/>
+<!-- 
     <Vegetable rdf:about="aubergine"/>
+   -->  
+    <rdf:Description rdf:about="aubergine">
+        <rdf:type rdf:resource="Vegetable"/>
+    </rdf:Description>
 
 
     <owl:ObjectProperty rdf:about="hasTopping">
@@ -25,15 +28,17 @@
 
     <owl:Class rdf:about="VegPizza">
         <rdfs:subClssOf>
-            <owl:unionOf rdf:parseType="Collection">
-                <owl:Class rdf:about="NoMeatPizza"/>
-                <owl:Class rdf:about="NoFishPizza"/>
-            </owl:unionOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class rdf:about="NoMeatPizza"/>
+                    <owl:Class rdf:about="NoFishPizza"/>
+                </owl:unionOf>
+            </owl:Class>
         </rdfs:subClssOf>
     </owl:Class>
 
     <owl:ObjectProperty rdf:about="hasTopping">
-        <rdfs:subPropertyOf rdf:about="hasIngredient"/>
+        <rdfs:subPropertyOf rdf:resource="hasIngredient"/>
     </owl:ObjectProperty>
 
 </rdf:RDF>
