@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+    <!ENTITY xsd "http://www.w3c.org/2000/10/XMLSchema#">
+]>
+
+<rdf:RDF 
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" 
+    xmlns:owl="http://www.w3c.org/2002/07/owl#">
+
+
+    <rdf:Description rdf:about="Jack">
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class rdf:about="Person" />
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="Parent" />
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+    </rdf:Description>
+</rdf:RDF>
+<!-- 
+@perfix rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@perfix owl:<http://www.w3c.org/2002/07/owl#>. 
+
+rdf:Person    rdf:type          owl:Class
+rdf:Parent    rdf:type          owl:Class
+rdf:Jack    rdf:type            owl:Class
+            owl:intersectionOf  (rdf:Person _:id1).
+_:id1       rdf:type            owl:Class
+            owl:complementOf    rdf:Parent
+
+-->
