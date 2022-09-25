@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:ex="http://example.org/">
+
+    <rdf:Description rdf:about="Romeo">
+        <ex:tought rdf:parseType="Resource">
+            <rdf:object>Juliet</rdf:object>
+            <rdf:predicate>were</rdf:predicate>
+            <rdf:subject>dead</rdf:subject>
+        </ex:tought>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="John">
+        <ex:believe rdf:parseType="Resource">
+            <rdf:object><rdf:Description rdf:about="Mary"/></rdf:object>
+            <rdf:predicate>want</rdf:predicate>
+            <rdf:subject rdf:parseType="Resource">
+                <rdf:object><rdf:Description rdf:about="Mary"/></rdf:object>
+                <rdf:predicate>marry</rdf:predicate>
+                <rdf:subject><rdf:Description rdf:about="John"/></rdf:subject>          
+            </rdf:subject>
+        </ex:believe>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="dwarf">
+        <ex:notice rdf:parseType="Resource">
+            <rdf:object rdf:parseType="Resource">
+                <rdf:type rdf:resource="Person"/>
+            </rdf:object>
+            <rdf:predicate>eat</rdf:predicate>
+            <rdf:subject><ex:plate/></rdf:subject>
+        </ex:notice>
+        <ex:owns>
+            <ex:plate/>
+        </ex:owns>
+    </rdf:Description>
+
+</rdf:RDF>

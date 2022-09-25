@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF 
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:ex="http://example.org/">
+
+    <rdf:Description rdf:about="http://example.org/vegetableThaiCurry">
+        <ex:thaiDishBasedOn rdf:resource="http://example.org/coconutMilk"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.org/sebastian">
+        <rdf:type rdf:resource="http://example.org/AllergicToNuts"/>
+        <ex:eats rdf:resource="http://example.org/vegetableThaiCurry"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.org/AllergicToNuts">
+        <rdfs:subClassOf rdf:resource="http://example.org/Pitiable"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.org/thaiDishBasedOn">
+        <rdfs:domain rdf:resource="http://example.org/Thai"/>
+        <rdfs:range rdf:resource="http://example.org/Nutty"/>
+        <rdfs:subPropertyOf rdf:resource="http://example.org/hasIngredient"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="hasIngredient">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty"/>
+    </rdf:Description>
+
+</rdf:RDF>

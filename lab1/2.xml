@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF 
+    xml:base="http://semantic-web-book.org/"
+    xmlns:ex="http://example.org/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+    <rdf:Description rdf:about="uri">
+        <ex:authors rdf:parseType="Collection">
+            <rdf:Description
+                rdf:about="http://semantic-web-book.org/uri/Hitzler" />
+            <rdf:Description 
+                rdf:about="http://semantic-web-book.org/uri/Krotzsch" />
+            <rdf:Description 
+                rdf:about="http://semantic-web-book.org/uri/Rudolph" />
+        </ex:authors>
+    </rdf:Description>
+
+    <!-- 
+@prefix book: <http://semantic-web-book.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ex: <http://example.org/> .
+
+book:uri    ex:authors  _:id1   .
+_:id1       rdf:type    rdf:Seq .
+_:id1       rdf:_1      book:uri/Hitzler    .
+_:id1       rdf:_2      book:uri/Krotzsch    .
+_:id1       rdf:_3      book:uri/Rudolph    .
+
+   -->
+</rdf:RDF>

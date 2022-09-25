@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF 
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:ex="http://example.org/"
+    xml:base="http://semantic-web-book.org/">
+
+    <rdf:Description rdf:about="uri">
+        <ex:publishBy rdf:resource="http://crcpress.com/uri"    />
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://www.w3.org/TR/rdf-primer">
+        <ex:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            RDF Primer
+        </ex:title>
+        <ex:pulicationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">
+            2004-02-10
+        </ex:pulicationDate>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.org/Chutney">
+        <ex:hasIngredient rdf:parseType="Resource">
+            <ex:ingredien rdf:resource="http://example.org/greenMango"  />
+            <ex:amount>1lb</ex:amount>
+        </ex:hasIngredient>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="uri">
+        <ex:authors>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://semantic-web-book.org/uri/Hitzler" />
+                <rdf:li rdf:resource="http://semantic-web-book.org/uri/Krotzsch" />
+                <rdf:li rdf:resource="http://semantic-web-book.org/uri/Rudolph" />
+            </rdf:Seq>
+        </ex:authors>
+    </rdf:Description>
+
+<!--         
+    <rdf:Description rdf:about="uri">
+        <ex:authors rdf:parseType="Collection">
+            <rdf:Description
+                rdf:about="http://semantic-web-book.org/uri/Hitzler" />
+            <rdf:Description 
+                rdf:about="http://semantic-web-book.org/uri/Krotzsch" />
+            <rdf:Description 
+                rdf:about="http://semantic-web-book.org/uri/Rudolph" />
+        </ex:authors>
+    </rdf:Description>
+ -->
+
+</rdf:RDF>

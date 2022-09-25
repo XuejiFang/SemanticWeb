@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF 
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:ex="http://example.org/">
+
+    <rdf:Description rdf:about="http://example.org/Mary">
+        <rdf:type rdf:resource="http://example.org/woman" />
+        <rdfs:property rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://example.org/wife"/>
+            <rdf:object rdf:resource="http://example.org/Mary" />
+            <rdf:subject rdf:resource="http://example.org/John"/>
+        </rdfs:property>        
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.org/mother">
+        <rdf:type rdf:resource="http://example.org/woman" />
+        <rdf:type rdf:resource="http://example.org/parents" />
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.org/parents">
+        <ex:have rdf:resource="http://example.org/child" />
+        <ex:Childof rdf:resource="http://example.org/grandparent" />
+    </rdf:Description>
+</rdf:RDF>
