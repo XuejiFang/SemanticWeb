@@ -7,6 +7,9 @@
     <owl:Class rdf:about="NegativePropertyAssertion"/>
     <rdf:Description rdf:about="Resource">
         <rdf:type rdf:resource="NegativePropertyAssertion"/>
+        <owl:sourceIndividual rdf:resource="Bill"/>
+        <owl:assertionProperty rdf:resource="hasDaughter"/>
+        <owl:targetIndividual rdf:resource="Susan"/>
         
     </rdf:Description>
 </rdf:RDF>
